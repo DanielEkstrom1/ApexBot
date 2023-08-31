@@ -31,16 +31,6 @@ jobs:
         with:
           python-version: '3.9.2'  # Desired python version
 
-      #Install Ansible
-      - name: Install Ansible
-        run: |
-          pip install ansible
-      
-      #Run Playbook
-      - name: Run Ansible playbook
-        run: |
-          ansible-playbook -i inventory.ini playbook.yml
-
       # Runs a set of commands using the runners shell
       - name: Run Linter
         uses: github/super-linter@v3
