@@ -11,7 +11,7 @@ def handle_response(message) -> str:
         return 'Hello!'
 
     if p_message == 'roll':
-        return str(random.randint(1, 6))
+        return str(random.randint(1, 13))
 
     if p_message == '!help':
         return "`!map - Check the current map and the Next map!` \n`!crafting - Check whats in the replicator!`"
