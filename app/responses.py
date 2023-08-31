@@ -24,9 +24,6 @@ def handle_response(message) -> str:
     
     if p_message == '!test':
         return "THIS IS A TEST TO SEE IF THE ANSIBLE PLAYBOOK WORKDS"
-    
-    if p_message == '!newtest':
-        return "THIS ANSIBLE PLAYBOOK WORKDS"
 
 
 def formatMapResponse(APIKEY) -> str:
