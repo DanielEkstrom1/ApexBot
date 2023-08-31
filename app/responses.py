@@ -21,6 +21,9 @@ def handle_response(message) -> str:
 
     if p_message == '!map':
         return formatMapResponse(APIKEY)
+    
+    if p_message == '!test':
+        return "Hello this is a ttest"
 
 
 def formatMapResponse(APIKEY) -> str:
