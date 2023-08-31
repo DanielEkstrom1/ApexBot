@@ -28,7 +28,8 @@ jobs:
       #Setup python
       - name: Set up Python
         uses: actions/setup-python@v2
-
+        with:
+          python-version: '3.11.4'  # Desired python version
 
       #Install Ansible
       - name: Install Ansible
