@@ -29,7 +29,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'  # Desired python version
+          python-version: '3.9.2'  # Desired python version
 
       #Install Ansible
       - name: Install Ansible
