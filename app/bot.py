@@ -19,6 +19,7 @@ def run_discord_bot():
     load_dotenv()
     TOKEN = os.getenv('TOKEN')
     APIKEY = os.getenv('APIKEY')
+    print(os.getenv('ChannelID'))
     ChannelID = int(os.getenv('ChannelID'))
     intents = discord.Intents.default()
     intents.message_content = True
