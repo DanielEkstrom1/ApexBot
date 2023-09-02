@@ -28,9 +28,6 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4.7.0
 
-      - name: echo pwd
-        run: cd /home/daniel/Vscode/ApexBot/ansible
-
       - name: Run Ansible playbook
         working-directory: ./ansible
         run: |
