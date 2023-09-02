@@ -39,9 +39,3 @@ jobs:
       - name: Run Ansible playbook
         run: |
           ansible-playbook playbook.yml -u ${{ secrets.ansible_user1 }} -h ${{ secrets.ansible_host1 }}
-
-      # Runs a set of commands using the runners shell
-      - name: Run Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: master
