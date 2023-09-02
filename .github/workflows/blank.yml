@@ -28,6 +28,9 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4.7.0
 
+      - name: echo pwd
+        cmd: echo pwd
+
       - name: Run Ansible playbook
         run: |
           ansible-playbook playbook.yml -u ${{ secrets.ansible_user1 }} -h ${{ secrets.ansible_host1 }}
