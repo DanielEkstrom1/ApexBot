@@ -32,5 +32,7 @@ jobs:
         uses: actions/setup-python@v4.7.0
 
       - name: Run Ansible playbook
+        working-directory: ./ansible
+
         run: |
           ansible-playbook playbook/secrettask.yaml -u ${{ secrets.ansible_user1 }} -h ${{ secrets.ansible_host1 }}
