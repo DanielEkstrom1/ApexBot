@@ -1,1 +1,5 @@
-
+vm:
+  hosts:
+    ubuntu:
+      ansible_host: ${{ secrets.ansible_host1 }}
+      ansible_user: ${{ secrets.ansible_user1 }}
