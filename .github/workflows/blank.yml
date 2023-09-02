@@ -32,5 +32,6 @@ jobs:
         run: cd /home/daniel/Vscode/ApexBot/ansible
 
       - name: Run Ansible playbook
+        working-directory: ./ansible
         run: |
-          ansible-playbook playbook.yml -u ${{ secrets.ansible_user1 }} -h ${{ secrets.ansible_host1 }}
+          ansible-playbook playbook/secrettask.yaml -u ${{ secrets.ansible_user1 }} -h ${{ secrets.ansible_host1 }}
