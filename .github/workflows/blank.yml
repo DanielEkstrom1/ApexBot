@@ -39,4 +39,4 @@ jobs:
         working-directory: ./ansible
 
         run: |
-          ansible-playbook -i inventory/ playbook/secrettask.yaml
+          ansible-playbook -i inventory/ playbook/secrettask.yaml --extra-vars "user=${{ secret.ansible_user1 }}" "host=${{ secret.ansible_host1 }}"
