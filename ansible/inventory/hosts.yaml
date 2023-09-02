@@ -1,5 +1,5 @@
 vm:
   hosts:
     ubuntu:
-      ansible_host: { { host } }
-      ansible_user: { { user } }
+      ansible_host:
+      ansible_user:
