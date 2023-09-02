@@ -30,7 +30,12 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v4.7.0
+      
+      - name: Test
+        working-directory: ./ansible
+        run: ls
 
+        
       - name: Run Ansible playbook
         working-directory: ./ansible
 
