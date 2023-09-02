@@ -25,14 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: setup python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.12.0-beta.4'
-          cache: 'pip'
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolache
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.0
 
+        
       - name: Install Ansible
         run: |
           pip install ansible
