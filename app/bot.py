@@ -3,7 +3,6 @@ import responses
 import requests
 from discord.ext import tasks
 import os
-from dotenv import load_dotenv
 
 
 async def send_message(message, user_message, is_private):
@@ -16,10 +15,12 @@ async def send_message(message, user_message, is_private):
 
 def run_discord_bot():
     print("STARTING")
-    load_dotenv()
-    TOKEN = os.getenv('TOKEN')
-    APIKEY = os.getenv('APIKEY')
-    ChannelID = int(os.getenv('ChannelID'))
+    try:
+        TOKEN = os.environ.get('TOKEN')
+        APIKEY = os.environ.get('APIKEY')
+        ChannelID = int(os.environ.get('ChannelID'))
+    except Exception as e:
+        print("ERROR: ", e)
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
@@ -37,13 +38,16 @@ def run_discord_bot():
         user_message = str(message.content)
         channel = str(message.channel)
         print(f'{username} said: {user_message} in {channel}')
-        if user_message[0] == '?':
-            user_message = user_message[1:]
-            await send_message(message, user_message, is_private=True)
-        else:
-            await send_message(message, user_message, is_private=False)
+        try:
+            if user_message[0] == '?':
+                user_message = user_message[1:]
+                await send_message(message, user_message, is_private=True)
+            else:
+                await send_message(message, user_message, is_private=False)
+        except Exception as e:
+            print(e)
 
-    @tasks.loop(minutes=1)
+    @tasks.loop(minutes=0.5)
     async def checkCurrMap():
         channel = client.get_channel(ChannelID)
         response = requests.get(
